@@ -12,4 +12,4 @@ To install needed dependencies.<br />
 ### `yarn start`
 
 Runs the app in the development mode.<br />
-Open [http://http://localhost:8080/](http://http://localhost:8080/) to view it in the browser.
+Open [http://localhost:8080/](http://localhost:8080/) to view it in the browser.
