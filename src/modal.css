@@ -1,0 +1,122 @@
+body.modal-open {
+  overflow: hidden;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  display: none;
+  animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+}
+
+.modal.modal--open {
+  display: block;
+	animation-name: fadeInOpacity;
+  opacity: 1;
+}
+
+.modal.modal--closing {
+  display: block;
+	animation-name: fadeOutOpacity;
+  opacity: 0;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes fadeOutOpacity {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+.modal .modal__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.7;
+}
+
+.modal .modal__window {
+  width: calc(100% - 150px);
+  margin: 100px auto;
+  border: solid 1px #c1c1c1;
+  border-radius: 3px;
+  z-index: 3;
+  position: relative;
+}
+
+.modal .modal__window .modal__window__header {
+  background: linear-gradient(to bottom, #ffffff 0%,#f6f6f6 30%,#f6f6f6 30%,#e5e5e5 100%);
+  height: 25px;
+  padding: 5px;
+  position: relative;
+  line-height: 25px;
+  border-bottom: solid 1px #d6d6d6;
+}
+
+.modal .modal__window .modal__window__header .modal__window__header__title {
+  width: calc(100% - 30px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.modal .modal__window .modal__window__header .modal__window__header__close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: #c94c4c;
+  color: white;
+  width: 25px;
+  height: 25px;
+  font-weight: bold;
+  line-height: 22px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.modal .modal__window .modal__window__content {
+  max-height: calc(100vh - 290px);
+  background-color: white;
+  padding: 10px;
+  font-size: 0.9rem;
+  overflow: auto;
+}
+
+.modal .modal__window .modal__window__footer {
+  height: 40px;
+  background-color: whitesmoke;
+  padding: 5px;
+  text-align: end;
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 651px) {
+  .modal .modal__window {
+    width: calc(100% - 80px);
+    margin: 40px auto;
+    max-height: calc(100% - 80px);
+  }
+
+  .modal .modal__window .modal__window__content {
+    max-height: calc(100vh - 190px);
+  }
+}
